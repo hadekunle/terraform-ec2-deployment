@@ -6,11 +6,12 @@ This is  [website](https://www.youtube.com/watch?v=SLB_c_ayRMo&ab_channel=freeCo
 
 Start by setting up a Provider 
 
+```terraform
 provider "aws" {
   region  = "us-east-2"
   profile = "default"
 }
-
+```
 
 1. Create VPC
 
