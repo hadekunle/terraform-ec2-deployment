@@ -13,8 +13,6 @@ resource "aws_vpc" "main" {
     Name = "prod"
   }
 }
-
-
 ```
 
 2. Create Internet Gateway
@@ -26,7 +24,6 @@ resource "aws_internet_gateway" "gw" {
     Name = "production"
   }
 }
-
 ```
 
 3. Create Custom Route Table
@@ -48,7 +45,6 @@ resource "aws_route_table" "prod_route_table" {
   tags = {
     Name = "example"
   }
-
 ```
 4. Create a subnet
 ```
@@ -60,19 +56,15 @@ resource "aws_subnet" "subnet-1" {
     Name = "prod-subnet"
   }
 }
-
-
 ```
 
 5. Associate subnet with Route Table
 
 ```
-
 resource "aws_route_table_association" "a" {
   subnet_id      = aws_subnet.subnet-1.id
   route_table_id = aws_route_table.prod_route_table.id
 }
-
 ```
 
 6. Create Security Group to allow port 22,80,443
