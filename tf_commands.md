@@ -5,7 +5,7 @@ This is  [website](https://www.youtube.com/watch?v=SLB_c_ayRMo&ab_channel=freeCo
 
 1. Create VPC
 
-```
+```terraform
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 
@@ -16,7 +16,7 @@ resource "aws_vpc" "main" {
 ```
 
 2. Create Internet Gateway
-```
+```terraform
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.main.id
 
@@ -28,7 +28,7 @@ resource "aws_internet_gateway" "gw" {
 
 3. Create Custom Route Table
 
-```
+```terraform
 resource "aws_route_table" "prod_route_table" {
   vpc_id = aws_vpc.main.id
 
@@ -47,7 +47,7 @@ resource "aws_route_table" "prod_route_table" {
   }
 ```
 4. Create a subnet
-```
+```terraform
 resource "aws_subnet" "subnet-1" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.0.1.0/24"
@@ -60,7 +60,7 @@ resource "aws_subnet" "subnet-1" {
 
 5. Associate subnet with Route Table
 
-```
+```terraform
 resource "aws_route_table_association" "a" {
   subnet_id      = aws_subnet.subnet-1.id
   route_table_id = aws_route_table.prod_route_table.id
