@@ -80,25 +80,7 @@ resource "aws_route_table_association" "a" {
 6. Create Security Group to allow port 22,80,443
 
 ```terraform
-resource "aws_subnet" "subnet-1" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-east-2a"
-  tags = {
-    Name = "prod-subnet"
-  }
-}
-
-# 5. Associate subnet with Route Table
-
-resource "aws_route_table_association" "a" {
-  subnet_id      = aws_subnet.subnet-1.id
-  route_table_id = aws_route_table.prod_route_table.id
-}
-
-# 6. Create Security Group to allow port 22,80,443
-
-resource "aws_security_group" "allow_web" {
+ resource "aws_security_group" "allow_web" {
   name        = "allow_web"
   description = "Allow Web inbound traffic"
   vpc_id      = aws_vpc.main.id
