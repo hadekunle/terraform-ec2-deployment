@@ -152,7 +152,7 @@ resource "aws_eip" "one" {
 }
 ```
 
-9. Create aws server and install/enable apache2
+9. Create aws server using EC2 instance
 
 ```terraform
 resource "aws_instance" "my_first_tf_server" {
