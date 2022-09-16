@@ -161,7 +161,6 @@ resource "aws_instance" "my_first_tf_server" {
   ami               = "ami-0568773882d492fc8"
   instance_type     = "t2.micro"
   availability_zone = "us-east-2a"
-  # key_name          = "TR-Instance.pem"
   key_name   = "main-key"
 
 
