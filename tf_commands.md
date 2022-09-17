@@ -191,5 +191,13 @@ resource "aws_instance" "my_first_tf_server" {
     "Name" = "web-server"
   }
 
+  #Option to use a sep. script variable
+
+   # user_data = file("script.sh")
+  # tags = {
+  #   Name = "web-server"
+  # }
+
+
 }
 ```
