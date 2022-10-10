@@ -2,10 +2,6 @@
 
 Download terraform [here](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
-This is  [website](https://www.youtube.com/watch?v=SLB_c_ayRMo&ab_channel=freeCodeCamp.org) to the full video on this set up
-
-
-
 Start by setting up a Provider 
 
 ```terraform
